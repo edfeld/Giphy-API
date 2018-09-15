@@ -48,10 +48,14 @@ $(document).ready(function() {
                         // Creating an image tag
                         var personImage = $("<img>");
 
+
                         // Giving the image tag an src attribute of a proprty pulled off the
                         // result item
                         personImage.attr("src", arrGiphs[i].images.fixed_height.url);
-
+                        personImage.attr("animated-src", arrGiphs[i].images.fixed_height.url);
+                        personImage.attr("still-src", arrGiphs[i].images.fixed_height_still);
+                        personImage.attr("data-state", "animated")
+                        personImage.addClass("gif");
                         // Appending the paragraph and personImage we created to the "gifDiv" div we created
                         gifDiv.append(p);
                         gifDiv.append(personImage);
