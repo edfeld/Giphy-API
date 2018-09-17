@@ -5,7 +5,8 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    <!--  google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css">
@@ -13,18 +14,25 @@
   <body>
      <!-- Begin page content -->
     <main role="main" class="container mx-0">
-        <h1 class="ml-5 ">Giphy API</h1>
-        <div id="Topic-Buttons"></div>
         
+        <h1 id="giphy-head" class="ml-5 text-center">Giphy API</h1>
+        <div class="row border rounded mx-1 mb-1 bg-light">
+            <div class="column col-md-7 col-sm-12 mb-2">
+                <div id="Topic-Buttons"></div>
+
+            </div>
+            <div class="column col-md-5 col-sm-12">
+                <form id="sport-form" class="mt-1">
+                    <label for="sport-input">Add a Sport!</label>
+                    <input type="text" id="sport-input">
+                    <!-- Button triggers new movie to be added -->
+                    <input id="add-sport" type="submit" value="Add a Sport">
+                </form>
+            </div>
+        
+        </div>
         <div id="Giphy-Base" class="mt-0 clearfix"></div>
-        <form id="sport-form" class="mt-1">
-            <label for="sport-input">Add a Sport!</label>
-            <input type="text" id="sport-input">
-            <br>
-        
-            <!-- Button triggers new movie to be added -->
-            <input id="add-sport" type="submit" value="Add a Sport">
-        </form>
+
     </main>
       
     <footer class="footer">

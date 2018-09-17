@@ -3,13 +3,25 @@
 
 /* Sticky footer styles
 -------------------------------------------------- */
+
+
 html {
+    font-family: 'Ruslan Display', cursive;
     position: relative;
     min-height: 100%;
   }
   body {
     margin-bottom: 60px; /* Margin bottom by footer height */
+    background-image: url("../images/topography.png");
+    background-repeat: repeat;
+    font-family: 'Acme', sans-serif;
+
   }
+
+  #giphy-head {
+    font-family: 'Acme', sans-serif;
+  }
+
   .footer {
     position: absolute;
     bottom: 0;
@@ -25,7 +37,7 @@ html {
   /* Not required for template or sticky footer method. */
   
   .container {
-    width: auto;
-    max-width: 680px;
+    width: 1200;
+    /* max-width: 680px; */
     padding: 0 15px;
   }
