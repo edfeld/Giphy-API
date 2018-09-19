@@ -1,15 +1,11 @@
 /* giph-API css */
 
-
-/* Sticky footer styles
--------------------------------------------------- */
-
-
 html {
     font-family: 'Ruslan Display', cursive;
     position: relative;
     min-height: 100%;
   }
+
   body {
     margin-bottom: 60px; /* Margin bottom by footer height */
     background-image: url("../images/topography.png");
@@ -17,11 +13,13 @@ html {
     font-family: 'Acme', sans-serif;
 
   }
-
+  /* Google font */
   #giphy-head {
     font-family: 'Acme', sans-serif;
   }
 
+  /* Sticky footer styles
+  -------------------------------------------------- */
   .footer {
     position: absolute;
     bottom: 0;
@@ -31,13 +29,7 @@ html {
     background-color: #f5f5f5;
   }
   
-  
-  /* Custom page CSS
-  -------------------------------------------------- */
-  /* Not required for template or sticky footer method. */
-  
   .container {
     width: 1200;
-    /* max-width: 680px; */
     padding: 0 15px;
   }

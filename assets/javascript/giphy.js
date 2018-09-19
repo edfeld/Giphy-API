@@ -2,19 +2,21 @@
 
 $(document).ready(function() {
 
-    let arrTopics =[  "ping pong", "soccer", "tennis", "bicycle", "squirrel suit" ];
+    let arrTopics =[ "ping pong", "soccer", "tennis", "bicycle", "squirrel suit" ];
     // let arrGiphs = [];
 
     let myAPIKey = "HE3TGTW6fWe8xTnFRqYBA4npAcLJtaes";
-    let queryKey = "ryan+gosling"
+    
     // Example queryURL for Giphy API
     // var queryURL = "https://api.giphy.com/v1/gifs/trending?api_key=dc6zaTOxFJmzC";
     
-    // Display the giphs
+    // Display the gifs
     function displayGiphy() {
         console.log($(this));
         let arrGiphs;
+        // set up the Query Key
         queryKey = $(this).text();
+        // I use regex to replace spaces with plus signs inside of the phrases
         var regex = / /gi;
         console.log(queryKey.replace(regex, '+'));
         queryKey = queryKey.replace(regex, '+');
@@ -22,6 +24,7 @@ $(document).ready(function() {
         var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + queryKey + "&api_key=" + myAPIKey + "&limit=10";
 
         console.log(queryURL)
+        // query the Giphy API
         $.ajax({
             url: queryURL,
             method: "GET"
@@ -30,8 +33,7 @@ $(document).ready(function() {
             console.log(response);
             arrGiphs = response.data;
         
-                // getGiphyAPIData();
-                // Looping over every result item
+                // Looping through result items
                 for (var i = 0; i < arrGiphs.length; i++) {
 
                     // Only taking action if the photo has an appropriate rating
@@ -48,7 +50,7 @@ $(document).ready(function() {
                         // Creating a paragraph tag with the result item's rating
                         var p = $("<p>").text("Rating: " + rating);
 
-                        // Giving the image tag an src attribute of a proprty pulled off the
+                        // Giving the image tag a src attribute of a proprty pulled from the
                         // result item
                         gifImage.attr("src", arrGiphs[i].images.fixed_height_still.url);
                         gifImage.attr("animated-src", arrGiphs[i].images.fixed_height.url);
@@ -60,7 +62,7 @@ $(document).ready(function() {
                         gifDiv.append(p);
 
                         // Prepending the gifDiv to the "#gifs-appear-here" div in the HTML
-                        $("#Giphy-Base").append(gifDiv);
+                        $("#Giphy-Base").prepend(gifDiv);
                     }
                 }
             });
@@ -71,17 +73,17 @@ $(document).ready(function() {
     function renderButtons() {
     // Create buttons from the array of topics.
         $("#Topic-Buttons").empty();
-        // Loop through the array of movies, then generate buttons for each movie in the array
+        // Loop through the array of topics, then generate buttons for each topic in the array
         for(i=0; i<arrTopics.length; i++) {
             var mybutton = $("<button>").addClass("Giphy-Topic btn btn-info border mt-1 mb-1");
             mybutton.text(arrTopics[i]);
             mybutton.attr("data-name", arrTopics[i]);
             $("#Topic-Buttons").append(mybutton);
-            // shadow-sm p-3 mb-5 bg-white rounded ml-1 
+            
         }
 
     }   
-    // toggle the animation on/off
+    // Toggle the animation on/off
     function toggleAnimation () {
         if ( $(this).attr("data-state") == 'still' ) {
             $(this).attr("data-state", "animate");
@@ -106,31 +108,22 @@ $(document).ready(function() {
         
         // check for a value in myInput
         if( myInput !== ""){
-        arrTopics.push(myInput);
+            arrTopics.push(myInput);
         $("#sport-input").val("");
         }
 
-        // The renderButtons function is called, rendering the list of movie buttons
+        // The renderButtons function is called, rendering the list of topic buttons.
         renderButtons();
       });
 
-
-    // arrGiphs.forEach(element => {
-        
-    // });
-
-   
+    // Call the function to create the intial buttons. 
     renderButtons();
 
-   
+    // The on click function that displays the Gifs
     $(document).on("click", ".Giphy-Topic", displayGiphy);
-
+    
+    // The on click function to toggle animation and still.
     $(document).on("click", ".gif", toggleAnimation);
    
 
 });
-
-
-
-//     var xhr = $.get("http://api.giphy.com/v1/gifs/search?q=ryan+gosling&api_key=YOUR_API_KEY&limit=5");
-// xhr.done(function(data) { console.log("success got data", data); });
