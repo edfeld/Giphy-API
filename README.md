@@ -8,5 +8,3 @@ The user is presented with a set of buttons that represent sports topics.  When 
 GIF's are rendered as still images.  When a user clicks on a still GIF, the GIF will animate.  The user can click on the GIF and again and it will return to the still image. 
 
 Users can add Topic buttons by using the "Add a Sport!" input form.  To add a Topic, the user inputs text into the input field and presses the "Add a Sport" button.
-
-
