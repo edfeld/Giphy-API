@@ -24,6 +24,7 @@ $(document).ready(function() {
         var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + queryKey + "&api_key=" + myAPIKey + "&limit=10";
 
         console.log(queryURL)
+        $("#Giphy-Base").empty();
         // query the Giphy API
         $.ajax({
             url: queryURL,
@@ -62,7 +63,8 @@ $(document).ready(function() {
                         gifDiv.append(p);
 
                         // Prepending the gifDiv to the "#gifs-appear-here" div in the HTML
-                        $("#Giphy-Base").prepend(gifDiv);
+                        
+                        $("#Giphy-Base").append(gifDiv);
                     }
                 }
             });
