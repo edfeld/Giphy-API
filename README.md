@@ -1,5 +1,7 @@
 # Giphy-API
 
+![Giphy_API](https://user-images.githubusercontent.com/18557337/56555508-0d802d00-654a-11e9-85af-8a0ef6288ee1.png)
+
 ## Present GIFs on a web page using an API call
 
 Technologies:
@@ -12,7 +14,7 @@ Technologies:
 
 - JavaScript
 
-- JQuery
+- jQuery
 
 - API call to Giphy.com
 
